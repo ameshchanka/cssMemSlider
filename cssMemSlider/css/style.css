@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: Tahoma, sans-serif;
+}
+
+.slider {
+    width: 900px;
+    text-align: center;
+    overflow: hidden;
+    margin: 150px auto ;
+    position: relative;
+}
+.slides{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    background-color: black;
+
+}
+.slides::-webkit-scrollbar {
+   display: none;
+}
+.slides::-webkit-scrollbar-thumb {
+    display: none;
+}
+.slides::-webkit-scrollbar-track {
+    background: transparent;
+}
+.slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 900px;
+    padding-top: calc(900px * (480/900) * 0.73);
+    border-radius: 10px;
+    background-color: black;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.3s;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items:flex-start;
+    
+}
+.title_pic{
+    padding-left: 20px;
+    text-align: start;
+    font-size: 26px;
+}
+img{
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 10px;
+}
+.links{
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    right: 0px;
+    top: calc(900px * (480/900) * 0.73);
+    background-color: black;
+}
+.links a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    margin-left: 4px;
+    border: none;
+    background-color:transparent;
+    cursor: pointer;
+    position: relative;
+  }
+.links a span{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border-width: 4px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: darkcyan;
+    background-color: darkcyan;
+}
+a:hover{
+    outline: 0;
+}
+a:hover span{
+    border-color: white;
+    background-color: white;
+}
+a:active span::after{
+    top: 52%;
+    
+}
+#slide-1:target ~ .links a[href="#slide-1"]:hover span,
+#slide-2:target ~ .links a[href="#slide-2"]:hover span,
+#slide-3:target ~ .links a[href="#slide-3"]:hover span,
+#slide-4:target ~ .links a[href="#slide-4"]:hover span{
+    border-color: white;
+    background-color: black;
+}
+#slide-1:target ~ .links a[href="#slide-1"] span,
+#slide-2:target ~ .links a[href="#slide-2"] span,
+#slide-3:target ~ .links a[href="#slide-3"] span,
+#slide-4:target ~ .links a[href="#slide-4"] span{
+    border-color: darkcyan;
+    background-color: black;
+}
+
+@media screen and (max-width: 940px) {
+    .slider {
+        width: calc(100vw - 40px);
+    }
+    .slide {
+        width: calc(100vw - 40px);
+        padding-top: 50%;
+    }
+    .links{
+        top: calc((100vw - 40px) * (480/900) * 0.73);
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, 0%);
+        width: 100%;
+    }
+    .title_pic{
+        padding-left: 10px;
+        font-size: 20px;
+    }
+} 
+@media screen and (max-width: 420px) {
+    .slide {
+        padding-top: 55%;
+    }
+    .title_pic{
+        padding-left: 5px;
+        font-size: 16px;
+    }
+}
+
+
+
+/*
+
+
+.slider_control{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.title div{
+    display: none;
+    color: white;
+}
+.title div:first-child{
+    display: block;
+}
+button{
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    position: relative;
+    background-color:transparent;
+    cursor: pointer;
+}
+button::after{
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    content: "";
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    border: 4px solid;
+    border-radius: 9px;
+    border-color: darkcyan;
+    background-color: darkcyan;
+    
+}
+button:active:after{
+    background-color: transparent;
+}
+button:hover:after{
+    background-color: white;
+    border-color: white;
+}
+button:root body{
+    background-color: brown;
+}
+*/
