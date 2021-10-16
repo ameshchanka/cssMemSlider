@@ -9,10 +9,10 @@ body{
 }
 
 .slider {
-    width: 900px;
+    width: 90vw;
     text-align: center;
     overflow: hidden;
-    margin: 150px auto ;
+    margin: 10vh auto ;
     position: relative;
 }
 .slides{
@@ -36,9 +36,9 @@ body{
 .slide {
     scroll-snap-align: start;
     flex-shrink: 0;
-    width: 900px;
-    padding-top: calc(900px * (480/900) * 0.73);
-    border-radius: 10px;
+    width: 90vw;
+    padding-top: calc(90vw * (480/900) * 0.73);
+    border-radius: 0.75rem;
     background-color: black;
     transform-origin: center center;
     transform: scale(1);
@@ -50,9 +50,9 @@ body{
     
 }
 .title_pic{
-    padding-left: 20px;
+    padding-left: 1rem;
     text-align: start;
-    font-size: 26px;
+    font-size: 1.5rem;
 }
 img{
     object-fit: contain;
@@ -60,41 +60,44 @@ img{
     top: 0;
     left: 0;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0.75rem;
 }
 .links{
-    width: 200px;
-    height: 40px;
+    width: 25%;
+    height: 2rem;
     position: absolute;
     right: 0px;
-    top: calc(900px * (480/900) * 0.73);
+    /*top: calc(90vw * (480/900) * 0.73);*/
+    bottom: 0rem;
     background-color: black;
+    display: flex;
+    justify-content: flex-end;
 }
 .links a {
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    margin-left: 4px;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.3rem;
     border: none;
     background-color:transparent;
     cursor: pointer;
     position: relative;
   }
 .links a span{
-    width: 20px;
-    height: 20px;
+    width: 1.5rem;
+    height: 1.5rem;
     position: absolute;
     content: "";
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;
-    border-width: 4px;
+    border-width: 0.3rem;
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 0.75rem;
     border-color: darkcyan;
     background-color: darkcyan;
 }
@@ -107,7 +110,6 @@ a:hover span{
 }
 a:active span::after{
     top: 52%;
-    
 }
 #slide-1:target ~ .links a[href="#slide-1"]:hover span,
 #slide-2:target ~ .links a[href="#slide-2"]:hover span,
@@ -126,22 +128,23 @@ a:active span::after{
 
 @media screen and (max-width: 940px) {
     .slider {
-        width: calc(100vw - 40px);
+        width: calc(90vw);
     }
     .slide {
-        width: calc(100vw - 40px);
+        width: calc(90vw);
         padding-top: 50%;
     }
     .links{
-        top: calc((100vw - 40px) * (480/900) * 0.73);
+        top: calc((90vw) * (480/900) * 0.73);
         left: 50%;
         right: auto;
         transform: translate(-50%, 0%);
         width: 100%;
+        justify-content: center;
     }
     .title_pic{
-        padding-left: 10px;
-        font-size: 20px;
+        padding-left: 0.75rem;
+        font-size: 1.2rem;
     }
 } 
 @media screen and (max-width: 420px) {
@@ -149,8 +152,8 @@ a:active span::after{
         padding-top: 55%;
     }
     .title_pic{
-        padding-left: 5px;
-        font-size: 16px;
+        padding-left: 0.3rem;
+        font-size: 1rem;
     }
 }
 
