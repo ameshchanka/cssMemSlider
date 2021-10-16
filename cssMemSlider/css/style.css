@@ -101,7 +101,18 @@ a:hover span{
     border-color: white;
     background-color: white;
 }
-
+#slide-1:not(:target) ~ #slide-2:not(:target) ~ 
+#slide-3:not(:target) ~ #slide-4:not(:target) ~ 
+.links a[href="#slide-1"] span{
+    border-color: darkcyan;
+    background-color: black;
+}
+#slide-1:not(:target) ~ #slide-2:not(:target) ~ 
+#slide-3:not(:target) ~ #slide-4:not(:target) ~ 
+.links a[href="#slide-1"]:hover span{
+    border-color: white;
+    background-color: black;
+}
 #slide-1:target ~ .links a[href="#slide-1"]:hover span,
 #slide-2:target ~ .links a[href="#slide-2"]:hover span,
 #slide-3:target ~ .links a[href="#slide-3"]:hover span,
