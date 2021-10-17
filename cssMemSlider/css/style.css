@@ -11,7 +11,6 @@ body{
     text-align: center;
     overflow: hidden;
     margin: 10vh auto ;
-    position: relative;
 }
 .slides{
     display: flex;
@@ -35,7 +34,6 @@ body{
     scroll-snap-align: start;
     flex-shrink: 0;
     width: 90vw;
-    /*padding-top: calc(90vw * (480/900) * 0.73);*/
     border-radius: 0.75rem;
     background-color: black;
     transform-origin: center center;
@@ -47,7 +45,7 @@ body{
     align-items: flex-start;
 }
 .title_pic{
-    padding: 1rem 0 1rem 1rem;
+    padding: 1rem 0 0.5rem 1rem;
     text-align: start;
     font-size: 1.5rem;
 }
@@ -58,8 +56,10 @@ img{
 }
 .links{
     width: 25%;
-    height: 2rem;
-    position: absolute;
+    height: 2.6rem;
+    position: sticky;
+    top: calc((90vw) * (480 / 900) * 0.73);
+    left: 0;
     right: 0px;
     bottom: 1rem;
     background-color: black;
@@ -77,16 +77,12 @@ img{
     border: none;
     background-color:transparent;
     cursor: pointer;
-    position: relative;
   }
 .links a span{
     width: 1.5rem;
     height: 1.5rem;
-    position: absolute;
-    content: "";
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
     cursor: pointer;
     border-width: 0.3rem;
     border-style: solid;
@@ -96,6 +92,9 @@ img{
 }
 a:hover{
     outline: 0;
+}
+a:active{
+    cursor:grabbing;
 }
 a:hover span{
     border-color: white;
@@ -130,18 +129,18 @@ a:hover span{
 
 @media screen and (max-width: 940px) {
     .slider {
-        width: calc(90vw);
+        width: 90vw;
     }
     .slide {
-        width: calc(90vw);
+        width: 90vw;
     }
     .links{
-        top: calc((90vw) * (480/900) * 0.73);
-        left: 50%;
-        right: auto;
-        transform: translate(-50%, 0%);
-        width: 100%;
-        justify-content: center;
+        top: calc((90vw) * (480 / 900) * 0.73);
+        left: 0;
+        right: 50%;
+        transform: translate(50%, 0%);
+        width: 50%;
+        justify-items: center;
     }
     .title_pic{
         padding-left: 0.75rem;
@@ -151,7 +150,7 @@ a:hover span{
 } 
 @media screen and (max-width: 420px) {
     .title_pic{
-        padding-left: 0.3rem;
+        padding: 4.5rem 0 0.5rem 0.3rem;
         font-size: 1rem;
     }
 }
