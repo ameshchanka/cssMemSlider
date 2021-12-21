@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: Tahoma, sans-serif;
+}
+.slider {
+    width: 90vw;
+    text-align: center;
+    overflow: hidden;
+    margin: 10vh auto ;
+}
+.slides{
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    background-color: black;
+
+}
+.slides::-webkit-scrollbar {
+   display: none;
+}
+.slides::-webkit-scrollbar-thumb {
+    display: none;
+}
+.slides::-webkit-scrollbar-track {
+    background: transparent;
+}
+.slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 90vw;
+    border-radius: 0.75rem;
+    background-color: black;
+    transform-origin: center center;
+    transform: scale(1);
+    transition: transform 0.2s;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: flex-start;
+}
+.title_pic{
+    padding: 1rem 0 0.5rem 1rem;
+    text-align: start;
+    font-size: 1.5rem;
+}
+img{
+    object-fit: contain;
+    width: 100%;
+    border-radius: 0.75rem;
+}
+.links{
+    width: 25%;
+    height: 2.6rem;
+    position: sticky;
+    top: calc((90vw) * (480 / 900) * 0.73);
+    left: 0;
+    right: 0px;
+    bottom: 1rem;
+    background-color: black;
+    display: flex;
+    justify-content: flex-end;
+}
+.links a {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.3rem;
+    border: none;
+    background-color:transparent;
+    cursor: pointer;
+  }
+.links a span{
+    width: 1.5rem;
+    height: 1.5rem;
+    left: 50%;
+    top: 50%;
+    cursor: pointer;
+    border-width: 0.3rem;
+    border-style: solid;
+    border-radius: 0.75rem;
+    border-color: darkcyan;
+    background-color: darkcyan;
+}
+a:hover{
+    outline: 0;
+}
+a:active{
+    cursor:grabbing;
+}
+a:hover span{
+    border-color: white;
+    background-color: white;
+}
+#slide-1:not(:target) ~ #slide-2:not(:target) ~ 
+#slide-3:not(:target) ~ #slide-4:not(:target) ~ 
+.links a[href="#slide-1"] span{
+    border-color: darkcyan;
+    background-color: black;
+}
+#slide-1:not(:target) ~ #slide-2:not(:target) ~ 
+#slide-3:not(:target) ~ #slide-4:not(:target) ~ 
+.links a[href="#slide-1"]:hover span{
+    border-color: white;
+    background-color: black;
+}
+#slide-1:target ~ .links a[href="#slide-1"]:hover span,
+#slide-2:target ~ .links a[href="#slide-2"]:hover span,
+#slide-3:target ~ .links a[href="#slide-3"]:hover span,
+#slide-4:target ~ .links a[href="#slide-4"]:hover span{
+    border-color: white;
+    background-color: black;
+}
+#slide-1:target ~ .links a[href="#slide-1"] span,
+#slide-2:target ~ .links a[href="#slide-2"] span,
+#slide-3:target ~ .links a[href="#slide-3"] span,
+#slide-4:target ~ .links a[href="#slide-4"] span{
+    border-color: darkcyan;
+    background-color: black;
+}
+
+@media screen and (max-width: 940px) {
+    .slider {
+        width: 90vw;
+    }
+    .slide {
+        width: 90vw;
+    }
+    .links{
+        top: calc((90vw) * (480 / 900) * 0.73);
+        left: 0;
+        right: 50%;
+        transform: translate(50%, 0%);
+        width: 50%;
+        justify-items: center;
+    }
+    .title_pic{
+        padding-left: 0.75rem;
+        padding-top: 5rem;
+        font-size: 1rem;
+    }
+} 
+@media screen and (max-width: 420px) {
+    .title_pic{
+        padding: 4.5rem 0 0.5rem 0.3rem;
+        font-size: 1rem;
+    }
+}
